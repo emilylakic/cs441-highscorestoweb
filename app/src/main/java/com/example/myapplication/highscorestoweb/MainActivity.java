@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView pink;
     private ImageView black;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
