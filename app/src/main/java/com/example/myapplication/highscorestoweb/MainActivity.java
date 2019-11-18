@@ -14,6 +14,12 @@ public class MainActivity extends AppCompatActivity {
     private ImageView orange;
     private ImageView pink;
     private ImageView black;
+    private int screenWidth;
+    private int screenHeight;
+    private int boxSpeed;
+    private int orangeSpeed;
+    private int pinkSpeed;
+    private int blackSpeed;
 
 
     @Override
@@ -27,5 +33,12 @@ public class MainActivity extends AppCompatActivity {
         orange = (ImageView) findViewById(R.id.orange);
         pink = (ImageView) findViewById(R.id.pink);
         black = (ImageView) findViewById(R.id.black);
+        screenWidth = size.x;
+        screenHeight = size.y;
+        //Speed of all the colors
+        boxSpeed = Math.round(screenHeight / 60);  // 1280 / 60 = 21.333... => 21
+        orangeSpeed = Math.round(screenWidth / 60); // 768 / 60 = 12.8 => 13
+        pinkSpeed = Math.round(screenWidth / 36);   // 768 / 36 = 21.333... => 21
+        blackSpeed = Math.round(screenWidth / 45);
     }
 }
