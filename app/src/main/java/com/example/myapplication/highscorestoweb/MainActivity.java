@@ -2,7 +2,10 @@ package com.example.myapplication.highscorestoweb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         orange = (ImageView) findViewById(R.id.orange);
         pink = (ImageView) findViewById(R.id.pink);
         black = (ImageView) findViewById(R.id.black);
+
+        WindowManager wm = getWindowManager();
+        Display disp = wm.getDefaultDisplay();
+        Point size = new Point();
+        disp.getSize(size);
+
         screenWidth = size.x;
         screenHeight = size.y;
         //Speed of all the colors
@@ -40,5 +49,14 @@ public class MainActivity extends AppCompatActivity {
         orangeSpeed = Math.round(screenWidth / 60); // 768 / 60 = 12.8 => 13
         pinkSpeed = Math.round(screenWidth / 36);   // 768 / 36 = 21.333... => 21
         blackSpeed = Math.round(screenWidth / 45);
+
+        orange.setX(-80);
+        orange.setY(-80);
+        pink.setX(-80);
+        pink.setY(-80);
+        black.setX(-80);
+        black.setY(-80);
+
+        scoreLabel.setText("Score : 0");
     }
 }
