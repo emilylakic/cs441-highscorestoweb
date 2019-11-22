@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     private int orangeSpeed;
     private int pinkSpeed;
     private int blackSpeed;
+    private int orangeX;
+    private int orangeY;
+    private int frameHeight;
 
 
     @Override
@@ -58,5 +61,24 @@ public class MainActivity extends AppCompatActivity {
         black.setY(-80);
 
         scoreLabel.setText("Score : 0");
+    }
+
+    public void changePos() {
+
+        hitCheck();
+
+        // Orange
+        orangeX -= orangeSpeed;
+        if (orangeX < 0) {
+            orangeX = screenWidth + 20;
+            orangeY = (int) Math.floor(Math.random() * (frameHeight - orange.getHeight()));
+        }
+        orange.setX(orangeX);
+        orange.setY(orangeY);
+
+    }
+
+    public void hitCheck() {
+
     }
 }
